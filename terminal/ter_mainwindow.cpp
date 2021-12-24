@@ -124,6 +124,7 @@ void Ter_MainWindow::openSerialPort()
 
         showStatusMessage(tr("Open error"));
     }
+    this->setWindowTitle("Enable " + p.name);
 }
 //! [4]
 
