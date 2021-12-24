@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui widgets serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,15 +17,27 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
     main.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    terminal/console.cpp \
+    terminal/settingsdialog.cpp \
+    terminal/ter_mainwindow.cpp
 
 HEADERS += \
-    mainwindow.h
+    mainwindow.h \
+    terminal/console.h \
+    terminal/settingsdialog.h \
+    terminal/ter_mainwindow.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    terminal/settingsdialog.ui \
+    terminal/ter_mainwindow.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    res.qrc \
+    terminal/terminal.qrc
